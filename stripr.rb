@@ -5,20 +5,20 @@
 class Stripr < Formula
   desc ""
   homepage "https://github.com/aosasona/homebrew-pkgs"
-  version "0.1.14"
+  version "0.1.15"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/aosasona/stripr/releases/download/v0.1.14/stripr_0.1.14_Darwin_x86_64.tar.gz"
-      sha256 "596bc86e1c2833fc3d8469ed9e9f81749493ae8166964dbaee1d7b04970c6298"
+    if Hardware::CPU.arm?
+      url "https://github.com/aosasona/stripr/releases/download/v0.1.15/stripr_0.1.15_Darwin_arm64.tar.gz"
+      sha256 "a6b615bfce53a71b361e6f1c89323f616258a16edc4ad854bcf228a85d786dfa"
 
       def install
         bin.install "stripr"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/aosasona/stripr/releases/download/v0.1.14/stripr_0.1.14_Darwin_arm64.tar.gz"
-      sha256 "045b7d34632ad13eafb73c732012fd2843695df20c826662d5fa1f705df673f9"
+    if Hardware::CPU.intel?
+      url "https://github.com/aosasona/stripr/releases/download/v0.1.15/stripr_0.1.15_Darwin_x86_64.tar.gz"
+      sha256 "31e4d7f60f3287f6f37afb88879f1f3d0d0f342b76628a43dde445faa046a343"
 
       def install
         bin.install "stripr"
@@ -27,17 +27,17 @@ class Stripr < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/aosasona/stripr/releases/download/v0.1.14/stripr_0.1.14_Linux_x86_64.tar.gz"
-      sha256 "8e0490a68e2f572326de0d13574063f1178e2f6fa38f62e77d38737af129041e"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/aosasona/stripr/releases/download/v0.1.15/stripr_0.1.15_Linux_arm64.tar.gz"
+      sha256 "f228ce90e8f38635e3b9464b34d3552bc0e0d72dcd450496bea49d30295938b8"
 
       def install
         bin.install "stripr"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/aosasona/stripr/releases/download/v0.1.14/stripr_0.1.14_Linux_arm64.tar.gz"
-      sha256 "8daf53219597517fbef9ab0ab879232c06d5143a9c9e4d45b875883d31227ce2"
+    if Hardware::CPU.intel?
+      url "https://github.com/aosasona/stripr/releases/download/v0.1.15/stripr_0.1.15_Linux_x86_64.tar.gz"
+      sha256 "673cca28176836830d683a255f55bab17473d0a5d8370c3de9615cc67214d49d"
 
       def install
         bin.install "stripr"
